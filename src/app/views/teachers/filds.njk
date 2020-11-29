@@ -1,0 +1,50 @@
+
+
+<div class="item">
+    <div>Avatar url</div>
+    <input type="text" name="avatar_url" placeholder="http://" value="{{ teacher.avatar_url }}" >
+</div>
+
+<div class="item">
+    <div>Nome completo</div>
+    <input type="text" name="name" placeholder="digite o teu nome" value="{{ teacher.name }}">
+</div>
+
+<div class="item">
+    <div>Data de Nascimento</div>
+    <input type="date" name="birth_date" value="{{ teacher.date }}">
+</div>
+
+<div class="item">
+    <div>Grau de escolaridade</div>
+    <select name="option">
+        <option value="1" value="{{ teacher.graduation }}">Ensino Médio Completo</option>
+        <option value="2" value="{{ teacher.graduation }}">Ensino Superior Completo</option>
+        <option value="3" value="{{ teacher.graduation }}">Mestrado e Doutorado</option>
+
+    </select>
+
+</div>
+
+<div class="item">
+    <div>Sexo</div>
+    <div>
+        
+        <span><input type="radio"name="gender" value="M" {% if teacher.gender == "M"  %} checked {% endif %}>Masculino</span>
+        <span><input type="radio" name="gender" value="F" {% if teacher.gender == "F"  %} checked {% endif %} >Feminino</span>
+    </div>
+</div>  
+
+<div class="item">
+    <div>Árera de atuação</div>
+    <div>
+        <input type="text" name="services" placeholder="Separe os serviços prestados por virgular" value="{{ teacher.services }}">
+    </div>
+</div>
+
+<button type="submit">Salvar</button>
+
+ 
+    
+
+    

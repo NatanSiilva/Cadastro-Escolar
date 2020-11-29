@@ -1,0 +1,65 @@
+
+
+<div class="item">
+    <div>Avatar url</div>
+    <input type="text" name="avatar_url" placeholder="http://" value="{{ student.avatar_url }}" >
+</div>
+
+<div class="item">
+    <div>Nome completo</div>
+    <input type="text" name="name" placeholder="digite o teu nome" value="{{ student.name }}">
+</div>
+
+<div class="item">
+    <div>Email</div>
+    <input type="email" name="email" placeholder="digite o teu email" value="{{ student.email}}">
+</div>
+
+<div class="item">
+    <div>Data de Nascimento</div>
+    <input type="date" name="birth_date" value="{{ student.date }}">
+</div>
+
+<div class="item">
+    <div>Grau de escolaridade</div>
+    <select name="option">
+        <option value="1" value="{{ student.graduation }}">Ensino Médio Completo</option>
+        <option value="2" value="{{ student.graduation }}">Ensino Superior Completo</option>
+        <option value="3" value="{{ student.graduation }}">Mestrado e Doutorado</option>
+        <option value="4" value="{{ student.graduation }}">Graduação em programação</option>
+    </select>
+</div>
+
+<div class="item">
+    <div>Sexo</div>
+    <div>
+        <span><input type="radio"name="gender" value="M" {% if student.gender == "M"  %} checked {% endif %}>Masculino</span>
+        <span><input type="radio" name="gender" value="F" {% if student.gender == "F"  %} checked {% endif %} >Feminino</span>
+    </div>
+</div>  
+
+<div class="item">
+    <div>Área de estudo</div>
+    <div>
+        <input type="text" name="services" placeholder="Separe os serviços prestados por virgular" value="{{ student.student }}">
+    </div>
+</div>
+
+
+<div class="item">
+    <div>Teacher</div>
+    <select name="teacher">
+        {% for teacher in teacherOptions %}
+            <option value="{{teacher.id}}" {% if student.teacher_id == teacher.id  %} selected {% endif %} >
+                {{teacher.name}}
+            </option>
+        {% endfor%}
+    </select> 
+</div>
+
+<button type="submit">Salvar</button>
+
+ 
+    
+
+    

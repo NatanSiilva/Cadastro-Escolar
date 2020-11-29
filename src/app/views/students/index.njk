@@ -1,0 +1,60 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<div class="card table-container">
+
+    <div class="header">
+        <a class="button" href="/students/create"> Cadastre-se</a>
+        <form action="/students" method="GET">
+            <input 
+                type="text"
+                name="filter"
+                placeholder="Nome ou Email"
+                value={{filter}}
+            />
+            <button type="submit">Filtrar</button>
+        </form>
+    </div>
+
+    <table width="100%">
+        <thead>
+            <tr>
+                
+                <th>Students</th>
+                <th>Studying</th>
+                <th>Email</th>
+                <th>View</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for student in students%}
+            <tr>
+                <td>
+                    <span style="background-image: url({{student.avatar_url}})"></span>
+                    {{student.name}}
+                </td>
+                <td>{{student.services}}</td>
+                <td>{{student.email}}</td>
+                <td><a href="/students/{{student.id}}">ver</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="pagination"
+        data-page={{pagination.page}}
+        data-total={{pagination.total}}
+        data-filter={{filter}}
+    ></div>
+
+</div>
+
+
+
+{% endblock content %}
+
+    
+
