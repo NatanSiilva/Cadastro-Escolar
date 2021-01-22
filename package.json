@@ -4,9 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "npm-run-all -p nodemon browsersync",
-    "nodemon": "nodemon src/server.js",
-    "browsersync": "browser-sync start --proxy http://localhost:3030 --files 'public,src/app/views'"
+    "start": "node src/server.js",
+    "nodemon": ""
+    
   },
   "dependencies": {
     "express": "^4.17.1",
